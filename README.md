@@ -17,6 +17,7 @@ hackathon March 2024
  * npm install
  * npm install react-modal
  * npm install axios
+ * npm install react-select
 
 ## Start backend server
 1. cd into backend
