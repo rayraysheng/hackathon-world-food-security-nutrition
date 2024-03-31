@@ -1,0 +1,133 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.chatbot-dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 75vh; /* Make the dashboard take up the full height of the viewport */
+}
+
+.chat-history {
+  flex-grow: 1; /* Allow chat history to grow and fill remaining space */
+  overflow-y: auto; /* Enable vertical scrolling for overflow */
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.message {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.user-message {
+  justify-content: flex-end; /* Align user's messages to the right */
+}
+
+.bot-message {
+  justify-content: flex-start; /* Align bot's messages to the left */
+}
+
+.message-content {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.user-message .message-content {
+  background-color: #b5d6f9; /* Style user's messages */
+  /* color: #000000; */
+}
+
+.bot-message .message-content {
+  background-color: #f0f0f0; /* Style bot's replies */
+}
+
+.message-sender {
+  font-weight: bold;
+}
+
+.message-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+.message-input input {
+  flex-grow: 1; /* Allow input to grow and fill remaining space */
+  margin-right: 10px;
+}
+
+.message-input button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.message-input button:hover {
+  background-color: #0056b3;
+}
+
+.chatbot-modal-overlay {
+  position: fixed; /* Cover the entire viewport */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75); /* Semi-transparent overlay */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.chatbot-modal {
+  position: fixed; /* Position the modal above the overlay */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the modal */
+  background: white;
+  padding: 20px;
+  z-index: 1001; /* Above the overlay */
+  max-width: 500px; /* Or any other max-width */
+  width: 90%; /* Responsive width */
+  max-height: 80vh; /* Max height to ensure it doesn't overflow the viewport */
+  overflow-y: auto; /* Allow scrolling within the modal if content is long */
+}

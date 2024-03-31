@@ -1,0 +1,26 @@
+/* Sidebar.css */
+
+.sidebar {
+    width: 200px; 
+    height: 100%; /* Make the sidebar full height */
+    position: fixed;
+    top: 50px; /* Adjust the top position to create space for the header navigation bar */
+    left: 0;
+    /* background-color: #f0f0f0; Example background color */
+    padding-top: 20px; 
+    z-index: 1; /* Ensure the sidebar is behind the header navigation bar */
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .sidebar ul li:hover {
+    background-color: #ccc; /* Example hover background color */
+  }

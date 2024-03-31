@@ -1,0 +1,15 @@
+  /* Annotation.css */
+
+  .annotation-box {
+    position: fixed;
+    top: 50%; /* Adjust as needed */
+    right: 20px; /* Adjust the distance from the right */
+    transform: translateY(-50%); /* Center vertically */
+    background-color: #4680bf; /* Example background color */
+    color: #fff; /* Example text color */
+    padding: 8px; /* Adjust padding to make the box smaller */
+    border-radius: 4px; /* Example border radius */
+    z-index: 999; /* Ensure it appears above other elements */
+    height: 200px; /* Adjust height to make the box taller */
+  }
+  
