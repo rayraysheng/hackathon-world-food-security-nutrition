@@ -32,3 +32,6 @@ hackathon March 2024
 the backend server runs on port 8080
 to access frontend, go to:
 http://localhost:3000
+
+## Architecture
+![Architecture diagram](architecture.png)
