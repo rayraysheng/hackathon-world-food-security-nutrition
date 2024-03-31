@@ -9,9 +9,6 @@ import '../style/Dashboard.css';
 import Sidebar from '../components/Sidebar.js';
 import HeaderNavBar from '../components/HeaderNavBar.js'; // Import your header navigation bar component
 
-import Annotation from '../components/Annotation';
-import GraphFilter from '../components/GraphFilter';
-
 Modal.setAppElement('#root'); // Avoid screen reader issues
 
 function Dashboard() {
@@ -42,16 +39,8 @@ function Dashboard() {
       </div>
 
       {/* Floating Chatbot Icon */}
-      <GraphFilter />
-
-      <div>
-        <Annotation content="This is an annotation!" position="top">
-          {/* Content to be annotated */}
-        </Annotation>
-      </div>
-
       <FloatingChatbotIcon onClick={handleOpenChatbotModal} />
-
+      
       {/* Chatbot Modal */}
       <Modal
         isOpen={isChatbotModalOpen}
