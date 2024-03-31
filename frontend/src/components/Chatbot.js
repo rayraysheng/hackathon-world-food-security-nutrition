@@ -1,9 +1,20 @@
-import React, { useState } from 'react';
-import axios from 'axios'; // Ensure axios is installed or install it with npm or yarn
+import React, { useState, useRef, useEffect } from 'react';
+import axios from 'axios';
+import '../style/App.css';
 
 function Chatbot() {
   const [inputMessage, setInputMessage] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
+  const chatEndRef = useRef(null); // Ref for scrolling to bottom
+
+  // Function to scroll chat history to bottom
+  const scrollToBottom = () => {
+    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    scrollToBottom(); // Scroll to bottom when chat history updates
+  }, [chatHistory]);
 
   const sendMessage = async () => {
     if (inputMessage.trim() === '') return; // Prevent sending empty messages
@@ -29,11 +40,12 @@ function Chatbot() {
     <div className="chatbot-dashboard">
       <div className="chat-history">
         {chatHistory.map((item, index) => (
-          <div key={index} className={`message ${item.sender}`}>
-            <span className="message-sender">{item.sender === 'user' ? 'You' : 'Bot'}</span>
+          <div key={index} className={`message ${item.sender === 'user' ? 'user-message' : 'bot-message'}`}>
             <p className="message-content">{item.message}</p>
           </div>
         ))}
+        {/* Empty div for scrolling to bottom */}
+        <div ref={chatEndRef} />
       </div>
       <div className="message-input">
         <input

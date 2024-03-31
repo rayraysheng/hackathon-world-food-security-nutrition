@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Chatbot from '../components/Chatbot.js';
 import FloatingChatbotIcon from '../components/FloatingChatbotIcon';
 import Modal from 'react-modal';
+import Annotation from '../components/Annotation';
+import GraphFilter from '../components/GraphFilter';
 
 Modal.setAppElement('#root'); // Avoid screen reader issues
 
@@ -15,6 +17,14 @@ function Dashboard() {
     <div>
       <h2>Dashboard</h2>
       {/* Other dashboard content */}
+
+      <GraphFilter />
+
+      <div>
+        <Annotation content="This is an annotation!" position="top">
+          {/* Content to be annotated */}
+        </Annotation>
+      </div>
 
       <FloatingChatbotIcon onClick={handleOpenChatbotModal} />
 
