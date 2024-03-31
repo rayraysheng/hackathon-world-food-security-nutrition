@@ -15,6 +15,8 @@ hackathon March 2024
 1. cd into frontend
 2. install dependencies
  * npm install
+ * npm install react-modal
+ * npm install axios
 
 ## Start backend server
 1. cd into backend
