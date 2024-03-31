@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../style/Annotation.css';
 
 // Annotation Component
 const Annotation = ({ text, author }) => {
