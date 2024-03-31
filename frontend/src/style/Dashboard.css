@@ -1,0 +1,55 @@
+/* Dashboard.css */
+
+.floating-chatbot-icon {
+  position: fixed;
+  bottom: 20px; /* Adjust the distance from the bottom */
+  right: 20px; /* Adjust the distance from the right */
+  color: #fff; /* Example text color */
+  width: 40px; /* Example width */
+  height: 40px; /* Example height */
+  border-radius: 50%; /* Make it round */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999; /* Ensure it appears above other elements */
+}
+  
+.floating-chatbot-icon:hover {
+  background-color: #aac9ff; /* Example hover background color */
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.middle-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 100px;
+}
+
+.header-navbar {
+  border: 2px solid #000; /* Set the border style */
+}
+
+.sidebar {
+  width: 200px; /* Adjust width as needed */
+}
+
+.graphfilter-container {
+  /* background-color: blue; */
+  border: 1px solid #000; /* Set the border style */
+  max-width: 80%; /* Set width to 80% of the container */
+  width: 1000px; /* Set maximum width to 1000px */
+  height: 400px;
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+.annotation-container {
+  margin-left: auto; /* Push the Annotation to the right side */
+}

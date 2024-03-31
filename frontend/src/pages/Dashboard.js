@@ -1,9 +1,13 @@
+// Dashboard.js
 import React, { useState } from 'react';
 import Chatbot from '../components/Chatbot.js';
 import FloatingChatbotIcon from '../components/FloatingChatbotIcon';
 import Modal from 'react-modal';
 import Annotation from '../components/Annotation';
 import GraphFilter from '../components/GraphFilter';
+import '../style/Dashboard.css';
+import Sidebar from '../components/Sidebar.js';
+import HeaderNavBar from '../components/HeaderNavBar.js'; // Import your header navigation bar component
 
 Modal.setAppElement('#root'); // Avoid screen reader issues
 
@@ -18,33 +22,46 @@ function Dashboard() {
   const handleCloseAnnotationModal = () => setIsAnnotationModalOpen(false);
 
   return (
-    <div>
-      <h2>Dashboard</h2>
-      {/* Other dashboard content */}
 
-      <GraphFilter />
+    <div className="dashboard-container">
+      {/* Header Navigation Bar */}
+      <HeaderNavBar />
+      
+      {/* Middle Content */}
+      <div className="middle-content">
+        <div className="sidebar">
+          <Sidebar />
+        </div>
+        <div className="graphfilter-container">
+          <GraphFilter />
+        </div>
+        <div>
+          <div>
+            <button onClick={handleOpenAnnotationModal}>Add Annotation</button>
+          </div>
 
-      <div>
-        {/* Button to open the annotation modal */}
-        <button onClick={handleOpenAnnotationModal}>Add Annotation</button>
+          {/* Annotation Modal */}
+          <Modal
+            isOpen={isAnnotationModalOpen}
+            onRequestClose={handleCloseAnnotationModal}
+            contentLabel="Annotation Modal"
+            className="annotation-modal"
+            overlayClassName="annotation-modal-overlay"
+          >
+            {/* Content inside the annotation modal */}
+            <Annotation content="This is an annotation!" >
+            </Annotation>
+            <div className="close-annotate">
+              <button onClick={handleCloseAnnotationModal}>Close</button>
+            </div>
+          </Modal>
+        </div>
       </div>
 
-      {/* Annotation Modal */}
-      <Modal
-        isOpen={isAnnotationModalOpen}
-        onRequestClose={handleCloseAnnotationModal}
-        contentLabel="Annotation Modal"
-        className="annotation-modal"
-        overlayClassName="annotation-modal-overlay"
-      >
-        {/* Content inside the annotation modal */}
-        <Annotation content="This is an annotation!" position="top">
-        </Annotation>
-        <button onClick={handleCloseAnnotationModal}>Close</button>
-      </Modal>
-
+      {/* Floating Chatbot Icon */}
       <FloatingChatbotIcon onClick={handleOpenChatbotModal} />
-
+      
+      {/* Chatbot Modal */}
       <Modal
         isOpen={isChatbotModalOpen}
         onRequestClose={handleCloseChatbotModal}

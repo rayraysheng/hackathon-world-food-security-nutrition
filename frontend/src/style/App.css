@@ -145,13 +145,20 @@
 .annotation-modal {
   position: fixed; /* Position the modal above the overlay */
   top: 50%;
-  left: 75%;
+  left: 80%;
   transform: translate(-50%, -50%); /* Center the modal */
   background: white;
   padding: 20px;
   z-index: 1001; /* Above the overlay */
-  max-width: 350px; /* Or any other max-width */
-  width: 90%; /* Responsive width */
+  border-radius: 4px; /* Example border radius */
+  width: 25%; /* Responsive width */
+  max-width: 400px; /* Or any other max-width */
+  height: 40%;
   max-height: 80vh; /* Max height to ensure it doesn't overflow the viewport */
   overflow-y: auto; /* Allow scrolling within the modal if content is long */
+}
+
+.annotation-modal .close-annotate {
+  padding: 10px; /* Add padding to create space */
+  text-align: center; /* Center the button horizontally */
 }
